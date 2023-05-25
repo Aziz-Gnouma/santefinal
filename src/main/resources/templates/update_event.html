@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Form-v9 by Colorlib</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css"th:href= "@{/css/css5/nunito-font.css}">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" th:href= "@{/css/css5/style.css}"/>
+
+</head>
+<body class="form-v9">
+<div class="page-content">
+    <div class="form-v9-content" style="background-image: url('/css/images/form-v9.jpg')">
+        <form class="form-detail" action="#" th:action="@{/saveEvent}" th:object="${evenement}"
+              method="POST">
+            <h2>Update Evenement</h2>
+            <div class="form-row-total">
+                <input type="hidden" th:field="*{id}" />
+                <div class="form-row">
+                    <input type="text" name="full-name" id="full-name" class="input-text" th:field="*{nomEvenement}" placeholder="nomEvenement" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="your-email" id="your-email" class="input-text" placeholder="Your Email" th:field="*{email}" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+                </div>
+            </div>
+            <div class="form-row-total">
+                <div class="form-row">
+                    <input type="text" name="full-name" id="full-name" class="input-text" th:field="*{nom_club}" placeholder="Nom Club" required>
+                </div>
+                <div class="form-row">
+                    <input type="date" name="your-email" id="your-email" class="input-text" placeholder="date" th:field="*{time}" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+                </div>
+            </div>
+            <div class="form-row-total">
+                <div class="form-row">
+                    <input type="text" name="full-name" id="full-name" class="input-text" th:field="*{description}" placeholder="Nom Club" required>
+                </div>
+
+            </div>
+            <div class="form-row-last">
+                <input type="submit" name="register" class="register" value="Update">
+            </div>
+        </form>
+    </div>
+</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

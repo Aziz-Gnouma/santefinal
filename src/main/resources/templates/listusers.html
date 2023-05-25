@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="">
+    <meta name="author" content="Themepixels">
+
+    <!-- Favicon -->
+
+    <title>Dashboard </title>
+
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="../assetsdash/css/style.min.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-header">
+        <a href="../" class="sidebar-logo">Studen Halth Hub</a>
+    </div><!-- sidebar-header -->
+    <div id="sidebarMenu" class="sidebar-body">
+        <div class="nav-group show">
+            <a href="/ok" class="nav-label">Dashboard</a>
+            <ul class="nav nav-sidebar">
+                <li class="nav-item">
+                    <a href="/ok" class="nav-link"><i class="ri-pie-chart-2-line"></i> <span>Dashbord</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/listusers" class="nav-link"><i class="ri-calendar-todo-line"></i> <span>List Users</span></a>
+                </li>
+
+            </ul>
+        </div><!-- nav-group -->
+
+    </div><!-- sidebar-body -->
+    <div class="sidebar-footer">
+        <div class="sidebar-footer-top">
+            <div class="sidebar-footer-thumb">
+                <img src="https://via.placeholder.com/500/4c5366/fff" alt="">
+            </div><!-- sidebar-footer-thumb -->
+            <div class="sidebar-footer-body">
+                <h6><a href="../pages/profile.html">Shaira Diaz</a></h6>
+                <p>Premium Member</p>
+            </div><!-- sidebar-footer-body -->
+            <a id="sidebarFooterMenu" href="" class="dropdown-link"><i class="ri-arrow-down-s-line"></i></a>
+        </div><!-- sidebar-footer-top -->
+        <div class="sidebar-footer-menu">
+            <nav class="nav">
+                <a href=""><i class="ri-edit-2-line"></i> Edit Profile</a>
+                <a href=""><i class="ri-profile-line"></i> View Profile</a>
+            </nav>
+            <hr>
+            <nav class="nav">
+                <a href=""><i class="ri-question-line"></i> Help Center</a>
+                <a href=""><i class="ri-lock-line"></i> Privacy Settings</a>
+                <a href=""><i class="ri-user-settings-line"></i> Account Settings</a>
+                <a href=""><i class="ri-logout-box-r-line"></i> Log Out</a>
+            </nav>
+        </div><!-- sidebar-footer-menu -->
+    </div><!-- sidebar-footer -->
+</div><!-- sidebar -->
+
+<div class="header-main px-3 px-lg-4">
+    <a id="menuSidebar" href="#" class="menu-link me-3 me-lg-4"><i class="ri-menu-2-fill"></i></a>
+
+    <div class="form-search me-auto">
+        <input type="text" class="form-control" placeholder="Search">
+        <i class="ri-search-line"></i>
+    </div><!-- form-search -->
+
+    <div class="dropdown dropdown-skin">
+        <a href="" class="dropdown-link" data-bs-toggle="dropdown" data-bs-auto-close="outside"><i class="ri-settings-3-line"></i></a>
+        <div class="dropdown-menu dropdown-menu-end mt-10-f">
+            <label>Skin Mode</label>
+            <nav id="skinMode" class="nav nav-skin">
+                <a href="" class="nav-link active">Light</a>
+                <a href="" class="nav-link">Dark</a>
+            </nav>
+            <hr>
+            <label>Sidebar Skin</label>
+            <nav id="sidebarSkin" class="nav nav-skin">
+                <a href="" class="nav-link active">Default</a>
+                <a href="" class="nav-link">Prime</a>
+                <a href="" class="nav-link">Dark</a>
+            </nav>
+        </div><!-- dropdown-menu -->
+    </div><!-- dropdown -->
+
+    <div class="dropdown dropdown-profile ms-3 ms-xl-4">
+        <a href="" class="dropdown-link" data-bs-toggle="dropdown" data-bs-auto-close="outside"><div class="avatar online"><img src="https://via.placeholder.com/500/4c5366/fff" alt=""></div></a>
+        <div class="dropdown-menu dropdown-menu-end mt-10-f">
+            <div class="dropdown-menu-body">
+                <div class="avatar avatar-xl online mb-3"><img src="https://via.placeholder.com/500/4c5366/fff" alt=""></div>
+                <h5 class="mb-1 text-dark fw-semibold">[[${#request.userPrincipal.principal.fullName}]]</h5>
+                <p class="fs-sm text-secondary">Premium Member</p>
+
+                <nav class="nav">
+
+
+                    <a href=""><i class="ri-logout-box-r-line"></i>
+                        <a href=""><i class="ri-logout-box-r-line"></i>
+                            <form th:action="@{/logout}" method="post">
+
+                                <input type="submit" value="Sign Out" />
+                            </form>
+                        </a></a>
+                </nav>
+            </div><!-- dropdown-menu-body -->
+        </div><!-- dropdown-menu -->
+    </div><!-- dropdown -->
+</div><!-- header-main -->
+
+
+
+
+
+<div class="main main-app p-3 p-lg-4">
+
+            <table class="table table-agent mb-0">
+                <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>E-mail</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Roles</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user: ${listUsers}">
+                    <td th:text="${user.id}">User ID</td>
+
+                    </td>
+                    <td th:text="${user.email}">E-mail</td><span class="ff-numerals"></span></td>
+                    <td th:text="${user.firstName}">First Name</td>
+                    <td th:text="${user.lastName}">Last Name</td>
+                    <td th:text="${user.roles}">Roles</td>
+                    <td><a class="btn btn-info" th:href="@{'/users/edit/' + ${user.id}}">Edit</a></td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div><!-- table-responsive -->
+!-- main -->
+
+
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="../lib/jquery.flot/jquery.flot.js"></script>
+
+
+
+    <script src="../assetsdash/js/script.js"></script>
+    <script src="../assetsdash/js/db.data.js"></script>
+    <script src="../assetsdash/js/db.sales.js"></script>
+</body>
+</html>

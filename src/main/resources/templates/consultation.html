@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      layout:decorator="layout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complete responsive hospital website create by win coder</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/yup/css/style.css">
+
+</head>
+<body class="consultation">
+
+<!-- header section ends -->
+<div layout:fragment="content">
+<!-- home section starts  -->
+
+<section class="home" id="home">
+    <div style="background-color: snow" sec:authorize="hasRole('ROLE_PSY')">
+
+        <div  class="counter-section bg-gradient">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="counter-text">
+                            <span> Welcome <span sec:authentication="principal.username">User</span></span>
+                            <h3>Hey Psy, you can visit your cosultation home</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="cd-item">
+                            <a href="#" id="price-btn" th:href="@{/admin/cons}">Admin Home <span class="arrow_right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    <div class="image">
+        <img src="yup/images/home-img.svg" alt="">
+    </div>
+
+    <div class="content">
+        <h3>we take care of your healthy life</h3>
+        <p> A person who has good physical health is likely to have bodily functions and processes working at their peak.</p>
+        <a href="#appointment" class="btn"> appointment us <span class="fas fa-chevron-right"></span> </a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> us </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="/yup/images/about-img.svg" alt="">
+        </div>
+
+        <div class="content">
+            <h3>take the world's best quality treatment</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure ducimus, quod ex cupiditate ullam in assumenda maiores et culpa odit tempora ipsam qui, quisquam quis facere iste fuga, minus nesciunt.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus vero ipsam laborum porro voluptates voluptatibus a nihil temporibus deserunt vel?</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+
+
+
+
+<!-- doctors section starts  -->
+
+<section class="doctors" id="doctors">
+
+    <h1 class="heading"> our <span>doctors</span> </h1>
+
+    <div class="box-container">
+
+
+        <div class="box">
+            <img src="/images/doc-5.jpg" alt="">
+            <h3>win coder</h3>
+            <span>expert doctor</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+    </div>
+    <h1> check appointment reponses
+        <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-info"> <a th:href="@{/listePsycons}">Here</a></button>
+        </div>
+    </h1>
+
+</section>
+
+<!-- doctors section ends -->
+
+<!-- appointmenting section starts   -->
+
+<section class="appointment" id="appointment">
+
+    <h1 class="heading"> <span>appointment</span> now </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="/yup/images/appointment-img.svg" alt="">
+        </div>
+
+        <a th:href = "@{/showconsnow}" type="submit" name="submit" value="appointment now" class="btn"> make a consult</a>
+
+
+    </div>
+
+</section>
+
+<!-- appointmenting section ends -->
+
+<!-- review section starts  -->
+
+<section class="review" id="review">
+
+    <h1 class="heading"> client's <span>review</span> </h1>
+
+    <div class="box-container">
+        <div class="box">
+            <img src="/yup/images/pic-1.jpg" alt="">
+            <h3>win coder</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
+        </div>
+
+        <div class="box">
+            <img src="/yup/images/pic-1.jpg" alt="">
+            <h3>win coder</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
+        </div>
+
+        <div class="box">
+            <img src="/yup/images/pic-1.jpg" alt="">
+            <h3>win coder</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- review section ends -->
+
+
+
+
+<!-- js file link  -->
+<script src="/yup/js/script.js"></script>
+
+    <!-- Js Plugins -->
+    <script src="/patron/js2/jquery-3.3.1.min.js"></script>
+    <script src="/patron/js2/bootstrap.min.js"></script>
+    <script src="/patron/js2/jquery.magnific-popup.min.js"></script>
+    <script src="/patron/js2/jquery.countdown.min.js"></script>
+    <script src="/patron/js2/jquery.slicknav.js"></script>
+    <script src="/patron/js2/owl.carousel.min.js"></script>
+    <script src="/patron/js2/main.js"></script>
+
+</body>
+</html>
+
+
+

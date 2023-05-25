@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="">
+    <meta name="author" content="Themepixels">
+
+    <!-- Favicon -->
+
+    <title>DashByte - Premium Dashboard Template</title>
+
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="../assetsdash/css/style.min.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-header">
+        <a href="../" class="sidebar-logo">Studen Health Hub</a>
+    </div><!-- sidebar-header -->
+    <div id="sidebarMenu" class="sidebar-body">
+        <div class="nav-group show">
+            <a href="#" class="nav-label">Dashboard</a>
+            <ul class="nav nav-sidebar">
+                <li class="nav-item">
+                    <a href="" class="nav-link"><i class="ri-pie-chart-2-line"></i> <span>Dashbord</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/listusers" class="nav-link"><i class="ri-calendar-todo-line"></i> <span>List Users</span></a>
+                </li>
+
+            </ul>
+        </div><!-- nav-group -->
+
+    </div><!-- sidebar-body -->
+    <div class="sidebar-footer">
+        <div class="sidebar-footer-top">
+            <div class="sidebar-footer-thumb">
+                <img src="https://via.placeholder.com/500/4c5366/fff" alt="">
+            </div><!-- sidebar-footer-thumb -->
+            <div class="sidebar-footer-body">
+                <h6><a href="../pages/profile.html">[[${#request.userPrincipal.principal.fullName}]]</a></h6>
+                <p>Premium Member</p>
+            </div><!-- sidebar-footer-body -->
+            <a id="sidebarFooterMenu" href="" class="dropdown-link"><i class="ri-arrow-down-s-line"></i></a>
+        </div><!-- sidebar-footer-top -->
+        <div class="sidebar-footer-menu">
+
+            <nav class="nav">
+
+                <a href=""><i class="ri-logout-box-r-line"></i>
+                    <form th:action="@{/logout}" method="post">
+
+                        <input type="submit" value="Sign Out" />
+                    </form>
+                </a>
+            </nav>
+        </div><!-- sidebar-footer-menu -->
+    </div><!-- sidebar-footer -->
+</div><!-- sidebar -->
+
+<div class="header-main px-3 px-lg-4">
+    <a id="menuSidebar" href="#" class="menu-link me-3 me-lg-4"><i class="ri-menu-2-fill"></i></a>
+
+    <div class="form-search me-auto">
+        <input type="text" class="form-control" placeholder="Search">
+        <i class="ri-search-line"></i>
+    </div><!-- form-search -->
+
+    <div class="dropdown dropdown-skin">
+        <a href="" class="dropdown-link" data-bs-toggle="dropdown" data-bs-auto-close="outside"><i class="ri-settings-3-line"></i></a>
+        <div class="dropdown-menu dropdown-menu-end mt-10-f">
+            <label>Skin Mode</label>
+            <nav id="skinMode" class="nav nav-skin">
+                <a href="" class="nav-link active">Light</a>
+                <a href="" class="nav-link">Dark</a>
+            </nav>
+            <hr>
+            <label>Sidebar Skin</label>
+            <nav id="sidebarSkin" class="nav nav-skin">
+                <a href="" class="nav-link active">Default</a>
+                <a href="" class="nav-link">Prime</a>
+                <a href="" class="nav-link">Dark</a>
+            </nav>
+        </div><!-- dropdown-menu -->
+    </div><!-- dropdown -->
+
+
+    <div class="dropdown dropdown-profile ms-3 ms-xl-4">
+        <a href="" class="dropdown-link" data-bs-toggle="dropdown" data-bs-auto-close="outside"><div class="avatar online"><img src="https://via.placeholder.com/500/4c5366/fff" alt=""></div></a>
+        <div class="dropdown-menu dropdown-menu-end mt-10-f">
+            <div class="dropdown-menu-body">
+                <div class="avatar avatar-xl online mb-3"><img src="https://via.placeholder.com/500/4c5366/fff" alt=""></div>
+                <h5 class="mb-1 text-dark fw-semibold">[[${#request.userPrincipal.principal.fullName}]]</h5>
+                <p class="fs-sm text-secondary">Premium Member</p>
+
+                <nav class="nav">
+
+
+                    <a href=""><i class="ri-logout-box-r-line"></i>
+                        <a href=""><i class="ri-logout-box-r-line"></i>
+                        <form th:action="@{/logout}" method="post">
+
+                            <input type="submit" value="Sign Out" />
+                        </form>
+                    </a></a>
+                </nav>
+            </div><!-- dropdown-menu-body -->
+        </div><!-- dropdown-menu -->
+    </div><!-- dropdown -->
+</div><!-- header-main -->
+
+<div class="main main-app p-3 p-lg-4">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <div>
+            <ol class="breadcrumb fs-sm mb-1">
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sales Monitoring</li>
+            </ol>
+            <h4 class="main-title mb-0">Welcome to Dashboard</h4>
+        </div>
+
+        <nav class="nav nav-icon nav-icon-lg">
+            <a href="" class="nav-link" data-bs-toggle="tooltip" title="Share"><i class="ri-share-line"></i></a>
+            <a href="" class="nav-link" data-bs-toggle="tooltip" title="Print"><i class="ri-printer-line"></i></a>
+            <a href="" class="nav-link" data-bs-toggle="tooltip" title="Report"><i class="ri-bar-chart-2-line"></i></a>
+        </nav>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-6 col-xl-3">
+            <div class="card card-one">
+                <div class="card-body">
+                    <label class="card-title fs-sm fw-medium mb-1">Shows</label>
+                    <h3 class="card-value mb-1"><i class="ri-shopping-bag-3-line"></i> 327</h3>
+                    <small><span class="d-inline-flex text-danger">0.7% <i class="ri-arrow-down-line"></i></span> than last year</small>
+                </div><!-- card-body -->
+            </div><!-- card-one -->
+        </div><!-- col -->
+        <div class="col-6 col-xl-3">
+            <div class="card card-one">
+                <div class="card-body">
+                    <label class="card-title fs-sm fw-medium mb-1"> Consulation</label>
+                    <h3 class="card-value mb-1"><i class="ri-briefcase-4-line"></i> <span></span>224</h3>
+                    <small><span class="d-inline-flex text-success">2.1% <i class="ri-arrow-up-line"></i></span> than last year</small>
+                </div><!-- card-body -->
+            </div><!-- card-one -->
+        </div><!-- col -->
+        <div class="col-6 col-xl-3">
+            <div class="card card-one">
+                <div class="card-body">
+                    <label class="card-title fs-sm fw-medium mb-1">Users</label>
+                    <h3 class="card-value mb-1"><i class="ri-inbox-line"></i> 598</h3>
+                    <small><span class="d-inline-flex text-danger">0.3% <i class="ri-arrow-down-line"></i></span> than last year</small>
+                </div><!-- card-body -->
+            </div><!-- card-one -->
+        </div><!-- col -->
+        <div class="col-6 col-xl-3">
+            <div class="card card-one">
+                <div class="card-body">
+                    <label class="card-title fs-sm fw-medium mb-1">Admins </label>
+                    <h3 class="card-value mb-1"><i class="ri-bar-chart-box-line"></i> 30<span>%</span></h3>
+                    <small><span class="d-inline-flex text-success">1.2% <i class="ri-arrow-up-line"></i></span> than last year</small>
+                </div><!-- card-body -->
+            </div><!-- card-one -->
+        </div><!-- col -->
+        <div class="col-xl-7">
+            <div class="card card-one">
+                <div class="card-header">
+                    <h6 class="card-title">Monthly Growth Revenue</h6>
+                    <nav class="nav nav-icon nav-icon-sm ms-auto">
+                        <a href="" class="nav-link"><i class="ri-refresh-line"></i></a>
+                        <a href="" class="nav-link"><i class="ri-more-2-fill"></i></a>
+                    </nav>
+                </div><!-- card-header -->
+                <div class="card-body">
+                    <ul class="legend mb-3">
+                        <li>Growth Actual</li>
+                        <li>Actual</li>
+                        <li>Plan</li>
+                    </ul>
+                    <div id="flotChart" class="flot-chart ht-300 mb-4"></div>
+                    <div class="p-2">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <h3 class="card-value mb-2"><span></span>380</h3>
+                                <label class="card-title fw-semibold text-dark mb-2">Yearly Revenue Growth</label>
+                                <p class="mb-0 fs-xs text-secondary">Measure how fast you’re growing Yearly recurring revenue.</p>
+                            </div><!-- col -->
+                            <div class="col-sm-6">
+                                <h3 class="card-value mb-2"><span></span>267</h3>
+                                <label class="card-title fw-semibold text-dark mb-2">Yearly Revenue/Shows</label>
+                                <p class="mb-0 fs-xs text-secondary">The revenue generated per customer from events on a monthly or yearly basis.</p>
+                            </div><!-- col -->
+                        </div><!-- row -->
+                    </div>
+                </div><!-- card-body -->
+            </div><!-- card -->
+        </div><!-- col -->
+        <div class="col-md-6 col-xl-5">
+            <div class="card card-one">
+                <div class="card-header">
+                    <h6 class="card-title">Account Retention</h6>
+                    <nav class="nav nav-icon nav-icon-sm ms-auto">
+                        <a href="" class="nav-link"><i class="ri-refresh-line"></i></a>
+                        <a href="" class="nav-link"><i class="ri-more-2-fill"></i></a>
+                    </nav>
+                </div><!-- card-header -->
+                <div class="card-body">
+                    <div id="flotThresholds" class="flot-chart ht-180 mb-3"></div>
+                    <p class="mb-3 fs-xs">Number of customers who have active subscription with you.</p>
+
+                    <div class="card p-3 d-flex flex-row mb-2">
+                        <div class="card-icon bg-primary"><i class="ri-bar-chart-grouped-line"></i></div>
+                        <div class="ms-3">
+                            <h4 class="card-value mb-1">53,100</h4>
+                            <label class="card-title fw-medium text-dark mb-1">Expansions</label>
+                            <p class="fs-xs text-secondary mb-0 lh-4">Customers who have upgraded the level of your products or service.</p>
+                        </div>
+                    </div>
+                    <div class="card p-3 d-flex flex-row">
+                        <div class="card-icon bg-ui-02"><i class="ri-bar-chart-grouped-line"></i></div>
+                        <div class="ms-3">
+                            <h4 class="card-value mb-1">2,884</h4>
+                            <label class="card-title fw-medium text-dark mb-1">Cancellations</label>
+                            <p class="fs-xs text-secondary mb-0 lh-4">Customers who have ended their subscription with you.</p>
+                        </div>
+                    </div>
+                </div><!-- card-body -->
+            </div><!-- card -->
+        </div><!-- col -->
+
+    </div><!-- main -->
+
+
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="../lib/jquery.flot/jquery.flot.js"></script>
+
+
+
+    <script src="../assetsdash/js/script.js"></script>
+    <script src="../assetsdash/js/db.data.js"></script>
+    <script src="../assetsdash/js/db.sales.js"></script>
+</body>
+</html>

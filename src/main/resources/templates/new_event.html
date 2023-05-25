@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Employee Management System</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    >
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" th:href= "@{cssevnt/nunito-font.css}">
+
+    <style>
+        body {
+            margin:  0;
+        }
+        .page-content {
+            width: 100%;
+            margin:  0 auto;
+            background-image: -moz-linear-gradient( 136deg, rgb(0,0,70) 0%, rgb(28,181,224) 100%);
+            background-image: -webkit-linear-gradient( 136deg, rgb(0,0,70) 0%, rgb(28,181,224) 100%);
+            background-image: -ms-linear-gradient( 136deg, rgb(0,0,70) 0%, rgb(28,181,224) 100%);
+            display: flex;
+            display: -webkit-flex;
+            justify-content: center;
+            -o-justify-content: center;
+            -ms-justify-content: center;
+            -moz-justify-content: center;
+            -webkit-justify-content: center;
+            align-items: center;
+            -o-align-items: center;
+            -ms-align-items: center;
+            -moz-align-items: center;
+            -webkit-align-items: center;
+        }
+        .form-v6-content  {
+            background: #fff;
+            width: 968px;
+
+            border-radius: 8px;
+            -o-border-radius: 8px;
+            -ms-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            margin: 90px 0;
+            font-family: 'Nunito', sans-serif;
+            color: #fff;
+            font-weight: 700;
+            position: relative;
+            display: flex;
+            display: -webkit-flex;
+
+        }
+        .form-v6-content .form-left {
+            margin-bottom: -6px;
+            height: 5%;
+        }
+        .form-v6-content .form-left img {
+            width: 600px;
+            height: 675px;
+
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+        .form-v6-content .form-detail {
+            padding: 30px 40px;
+            position: relative;
+            width: 200%;
+
+        }
+        .form-v6-content .form-detail h2 {
+            color: #333;
+            font-size: 35px;
+            text-align: center;
+            position: relative;
+            padding: 6px 0 0;
+            margin-bottom: 47px;
+        }
+        .form-v6-content .form-row {
+            width: 100%;
+
+        }
+        .form-v6-content .form-detail .form-row-last {
+            text-align: center;
+        }
+        .form-v6-content .form-detail .input-text {
+            margin-bottom: 35px;
+        }
+        .form-v6-content .form-detail input {
+            width: 92%;
+            padding: 0px 15px 10px 15px;
+            border: 2px solid transparent;
+            border-bottom: 2px solid #e5e5e5;
+            appearance: unset;
+            -moz-appearance: unset;
+            -webkit-appearance: unset;
+            -o-appearance: unset;
+            -ms-appearance: unset;
+            outline: none;
+            -moz-outline: none;
+            -webkit-outline: none;
+            -o-outline: none;
+            -ms-outline: none;
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+        }
+        .form-v6-content .form-detail .form-row input:focus {
+            border-bottom: 2px solid #fe892a;
+        }
+        .form-v6-content .form-detail .register {
+            background: #fe892a;
+            border-radius: 6px;
+            -o-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            width: 160px;
+            box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+            -o-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+            -ms-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+            -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+            border: none;
+            margin: 11px 0 50px 0px;
+            cursor: pointer;
+            font-family: 'Nunito', sans-serif;
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .form-v6-content .form-detail .register:hover {
+            background: #e37b27;
+        }
+        .form-v6-content .form-detail .form-row-last input {
+            padding: 13px;
+        }
+        input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: #666;
+            font-size: 16px;
+        }
+        input::-moz-placeholder { /* Firefox 19+ */
+            color: #666;
+            font-size: 16px;
+        }
+        input:-ms-input-placeholder { /* IE 10+ */
+            color: #666;
+            font-size: 16px;
+        }
+        input:-moz-placeholder { /* Firefox 18- */
+            color: #666;
+            font-size: 16px;
+        }
+#ok {
+    display: none;
+}
+
+    </style>
+    <script>
+        const myButton = document.getElementById("myButton");
+        myButton.disabled = true;
+    </script>
+</head>
+<body class="form-v6">
+<div class="page-content">
+    <div class="form-v6-content">
+        <div class="form-left">
+            <img src="/images/pexels-elijah-pilchard-12792194.jpg" alt="form">
+        </div>
+        <form class="form-detail" action="#" method="post" th:action="@{/saveEvent}" th:object="${evenement}" >
+            <h2>Register Evenement</h2>
+            <div class="form-row">
+                <input type="text" name="full-name" id="full-name" class="input-text" th:field="*{nomEvenement}" placeholder="Nom-event" required>
+            </div>
+            <div class="form-row">
+                <input type="email" name="email" id="ok" th:value="${#authentication.principal.username}" required>
+
+            </div>
+            <div class="form-row">
+                <input type="text" name="full-name" id="full-name" class="input-text" th:field="*{nom_club}" placeholder="Your Club Name" required>
+            </div>
+            <div class="form-row">
+                <input type="date" name="your-email" id="your-email" class="input-text" th:field="*{time}" placeholder="Date-Evenement " required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+            </div>
+            <div class="form-row">
+                <input type="text" name="your-email" id="full-name" class="input-text" th:field="*{description}" placeholder="description" >
+            </div>
+
+            <div class="form-row-last">
+                <input type="submit" name="register" class="register" value="Register">
+            </div>
+        </form>
+        <a th:href = "@{/admin/home}"> Back to Employee List</a>
+    </div>
+</div>
+
+</body>
+
+
+</html>
